@@ -28,10 +28,9 @@ Article.prototype.toHtml = function() {
   $newArticle.attr('data-category', this.category);
   $newArticle.find('time').attr('datetime', this.publishedOn);
   $newArticle.find('h1').text(this.title);
-  $newArticle.find('address').text(this.author);
+  $newArticle.find('a').text(this.author);
   $newArticle.find('section.article-body').html(this.body);
-
-  $newArticle.find('address').closest('a').attr('href', this.authorUrl);
+  $newArticle.find('a').attr('href', this.authorUrl);
 
   /* DONE: Now use jQuery traversal and setter methods to fill in the rest of the current template clone with values of the properties of this particular Article instance.
     We need to fill in:
@@ -52,15 +51,12 @@ rawData.sort(function(a,b) {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
-// TODO: Refactor these for loops using the .forEach() array method.
+// DONE: Refactor these for loops using the .forEach() array method.
 
-for(let i = 0; i < rawData.length; i++) {
-  articles.push(new Article(rawData[i]));
-}
+rawData.forEach(function(element) {
+  articles.push(new Article(element))
+})
 
-for(let i = 0; i < articles.length; i++) {
-  $('#articles').append(articles[i].toHtml());
-}
-
-// rawData.forEach(articles.push(new Article()));
-// articles.forEach($('#articles').append(articles.toHtml()))
+articles.forEach(function(article) {
+  $('#articles').append(article.toHtml());
+})

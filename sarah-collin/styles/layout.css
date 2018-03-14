@@ -1,0 +1,29 @@
+.heading-group-h1 {
+  padding: 3vw;
+}
+
+#articles {
+  margin: 0vw 4vw;
+}
+
+
+img {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+  .heading-group-h1 {
+    padding: 1vw;
+  }
+  
+  #articles {
+    margin: 0vw 1.7vw;
+  }
+  
+  img {
+    width: initial;
+    float:right;
+  }
+
+}
