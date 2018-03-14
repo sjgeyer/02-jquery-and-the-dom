@@ -18,6 +18,8 @@ We are using the JQuery library in order to reference and traverse the DOM with 
 
 03-14-2018 11:04:00 Application is styled with CSS
 
+03-14-2018 11:14:00 Application has all TODOs completed
+
 ## Credits and Collaborations
 
 stackoverflow
