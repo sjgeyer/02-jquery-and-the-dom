@@ -8,7 +8,6 @@ let articles = [];
 function Article (rawDataObj) {
   // DONE: Use the JS object that is passed in to complete this constructor function:
   // Save ALL the properties of `rawDataObj` into `this`
-  this.number = rawDataObj.number;
   this.title = rawDataObj.title;
   this.category = rawDataObj.category;
   this.author = rawDataObj.author;
@@ -21,7 +20,7 @@ Article.prototype.toHtml = function() {
   // DONE: What is the benefit of cloning the article? (see the jQuery docs)
   // The benefit is that it makes a full copy of the element (rather than moving it, which would happen if you just tried to append it), including all child elements.
 
-  let $newArticle = $('article.template').clone().removeClass('template').addClass(this.number);
+  let $newArticle = $('article.template').clone().removeClass('template');
   /* DONE: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
 
   if (!this.publishedOn) $newArticle.addClass('draft');
